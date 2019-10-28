@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>今天你是什么状态？</title>
+    <link rel="stylesheet" href="/layui/css/layui.css" media="all">
+    <link rel="stylesheet" href="/Stalled/css/bootstrap.css">
+    <link rel="stylesheet" href="/Stalled/css/style.css">
+    <link rel="stylesheet" href="/Stalled/css/font-awesome.css">
+    <style>
+        body{margin: 10px;}
+        .demo-carousel{height: 200px; line-height: 200px; text-align: center;}
+    </style>
+
+
+
+</head>
+<body>
+<!--主要的-->
+<div class="layui-tab layui-tab-brief" lay-filter="demo">
+    <!--头部-->
+    <blockquote class="layui-elem-quote layui-quote-nm layui-hide" id="footer">愿你所有的噩梦，都能梦想成真！</blockquote>
+    <!--主体-->
+    <div class="layui-tab-content">
+        <div class="layui-tab-item layui-show">
+
+    <!--视频-->
+
+            <script src='//player.polyv.net/script/polyvplayer.min.js'></script>
+            <div id='f840f68b2e283c8122bc415a2ae59fee_f'></div>
+            <hr class="layui-bg-gray">
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" id="username"  aria-label="Recipient's username" aria-describedby="button-addon2">
+                <div class="input-group-append">
+                    <button class="btn btn-outline-secondary" type="button" id="button-addon2" >随机</button>
+                </div>
+            </div>
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" id="wordTitle"   placeholder="给这一段文字取个标题呗">
+
+            </div>
+            <div class="input-group mb-3">
+                <textarea placeholder="这里描述一下你的今天" class="form-control" id="wordContent" style="overflow-x:hidden" rows="5"></textarea>
+
+            </div>
+            <hr class="layui-bg-gray">
+                <div class="layui-form-item">
+                    <div class="layui-input-block">
+                        <button  class="layui-btn"  id="addWordTextBtn"><span class="layui-badge-dot layui-bg-orange"></span>&nbsp;今日打卡</button>
+                        <button  class="layui-btn layui-btn-primary" onclick="javascript:history.back(-1);">返回</button>
+                    </div>
+                </div>
+        </div>
+
+    </div>
+</div>
+<script src="/Stalled/js/jquery-2.2.3.min.js"></script>
+<script src="/Stalled/js/bootstrap.js"></script>
+<script src="/layui/layui.all.js" charset="utf-8"></script>
+<script src="/js/addWordText.js"></script>
+</body>
+</html>

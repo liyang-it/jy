@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jy.mapper.wordTextMapper">
+
+    <resultMap id="BaseResultMap" type="com.jy.entity.wordText">
+        <result column="wordid" jdbcType="INTEGER" property="wordid" />
+        <result column="wordtitle" jdbcType="VARCHAR" property="wordtitle" />
+        <result column="wordcontent" jdbcType="VARCHAR" property="wordcontent" />
+        <result column="createdtime" jdbcType="TIMESTAMP" property="createdtime" />
+        <result column="userName" jdbcType="VARCHAR" property="username" />
+        <result column="userid" jdbcType="INTEGER" property="userid" />
+        <result column="ornotimg" jdbcType="VARCHAR" property="ornotimg" />
+    </resultMap>
+    <select id="queryWordtextPage" parameterType="com.jy.entity.wordText" resultMap="BaseResultMap">
+        SELECT * FROM wordtext where 1=1
+        <if test="wordid != null">
+            wordid = #{wordid}
+        </if>
+        <if test="wordtitle != null">
+            wordtitle = #{wordtitle}
+        </if>
+        <if test="userid != null">
+            userid = #{userid}
+        </if>
+        <if test="ornotimg != null">
+            ornotimg = #{ornotimg}
+        </if>
+        order by createdtime desc
+        limit #{page},#{rows}
+    </select>
+    <select id="getRowsCount" resultType="int">
+        SELECT COUNT(wordid) FROM wordtext
+    </select>
+
+    <insert id="insertWordText" parameterType="com.jy.entity.wordText">
+        INSERT INTO wordtext(wordtitle, wordcontent, createdtime, userid, ornotimg, username)
+        values(#{wordtitle}, #{wordcontent}, #{createdtime}, #{userid}, #{ornotimg}, #{username} )
+
+    </insert>
+
+</mapper>
