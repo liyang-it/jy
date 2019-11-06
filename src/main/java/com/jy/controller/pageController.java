@@ -1,7 +1,10 @@
 package com.jy.controller;
 
+import com.jy.service.dictCache;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
 
 /*
 页面跳转控制器
@@ -44,6 +47,14 @@ public class pageController {
     public String addWordText(){
         return "jy/addWordText";
     }
+
+    @RequestMapping(value = "/resourceHtml.html")
+    public String resourceHtml(){
+
+
+        return "jy/resourceHtml";
+    }
+
 
 
 
