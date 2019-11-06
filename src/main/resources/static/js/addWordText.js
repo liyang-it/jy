@@ -36,12 +36,22 @@ $(function(){
     });
     $("#addWordTextBtn").click(function(){
     $.post("/wt/insertWordText.json",{"username":$("#username").val(),"wordtitle":$("#wordTitle").val(),"wordcontent":$("#wordContent").val()},function(result){
-        layer.alert(""+result.message+"", {
-            skin: 'layui-layer-molv' //样式类名
-            ,closeBtn: 0
-        },function () {
-            window.location.href="jy/index.html";
-        });
+
+        if(result.status==200){
+            layer.alert(""+result.message+"", {
+                skin: 'layui-layer-molv' //样式类名
+                ,closeBtn: 0
+            },function () {
+                window.location.href="jy/index.html";
+            });
+        }else{
+            layer.alert(""+result.message+"", {
+                skin: 'layui-layer-molv' //样式类名
+                ,closeBtn: 0
+            });
+        }
+
+
 
          });
     });
