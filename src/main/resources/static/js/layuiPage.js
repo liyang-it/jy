@@ -31,7 +31,7 @@ function vedio(){
         shadeClose: true,
         shade: false,
         maxmin: true, //开启最大化最小化按钮
-        area: ['auto', '600px'],
+        area: ['380px', '700px'],
         content: '/resourceHtml.html'
     });
 
