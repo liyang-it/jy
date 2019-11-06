@@ -1,11 +1,15 @@
 package com.jy.service;
 
 import com.jy.entity.dict;
+import com.jy.entity.link;
 
 import java.util.List;
 
 public class dictCache {
-    public static List<dict> dictCacheList;
+    public static List<dict> dictCacheList;//字典数据
+    public static List<link> CacheVedio;
+    public static List<link> CacheMusic;
+    public static List<link> CacheEpub;
      /*
 
 
