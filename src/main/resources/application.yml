@@ -1,9 +1,9 @@
 spring:
   profiles:
-    active: pro
+    active: dev
 server:
   port: 9364
-
+#服务器端口为 80  本地 9364
 
 
 
