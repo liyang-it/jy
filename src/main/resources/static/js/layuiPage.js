@@ -22,19 +22,45 @@ function queryList(page) {
 function video_music(){
     layer.alert('见到你真的很高兴,接口正在写！', {icon: 6});
 }
-function vedio(){
-    //iframe窗
 
+function addWordTextGo(){
+    //
     layer.open({
         type: 2,
         title: 'Hx',
         shadeClose: true,
         shade: false,
         maxmin: true, //开启最大化最小化按钮
-        area: ['380px', '700px'],
-        content: '/resourceHtml.html'
+        area: ['360px', '600px'],
+        content: '/addWordText.html'
+        ,btn: ['今日打卡', '没话可写'] //只是为了演示
+        ,yes: function(index){
+       // $(that).click(); //此处只是为了演示，实际使用可以剔除
+            var body = layer.getChildFrame('body', index);//通过该对象可以获取iframe中的dom元素
+            var username=body.find("#username").val();
+            var wordTitle=body.find("#wordTitle").val();
+            var wordContent=body.find("#wordContent").val();
+            $.post("/wt/insertWordText.json",{"username":username,"wordtitle":wordTitle,"wordcontent":wordContent},function(result){
+                if(result.status==200){
+                    layer.alert(""+result.message+"", {
+                        skin: 'layui-layer-lan' //样式类名
+                        ,closeBtn: 0
+                    },function () {
+                        queryList(1);
+                        layer.closeAll();
+                    });
+                }else{
+                    layer.alert(""+result.message+"", {
+                        skin: 'layui-layer-lan' //样式类名
+                        ,closeBtn: 0
+                    });
+                }
+            });
+    }
+        ,btn2: function(){
+        layer.close();
+    }
     });
-
 }
 layui.use(['laypage', 'layer'], function () {
     var laypage = layui.laypage

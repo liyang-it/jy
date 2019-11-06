@@ -1,4 +1,7 @@
 $(function(){
+    layer.msg('部分网站使用的是国外服务器！加载可能会缓慢', {icon: 1});
+    //询问框
+
     $.get("/wt/getResource.json",function(result){
         var vedio="";
         var music="";

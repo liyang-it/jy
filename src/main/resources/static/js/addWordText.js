@@ -7,7 +7,7 @@ layui.use(['laydate', 'laypage', 'layer', 'table', 'carousel', 'upload', 'elemen
         ,laydate = layui.laydate
         ,carousel = layui.carousel //轮播
     //向世界问个好
-    layer.msg('Hello World');
+    //layer.msg('Hello World');
     getName();
     //执行一个轮播实例
     carousel.render({
@@ -34,27 +34,7 @@ $(function(){
         'autoplay': true
 
     });
-    $("#addWordTextBtn").click(function(){
-    $.post("/wt/insertWordText.json",{"username":$("#username").val(),"wordtitle":$("#wordTitle").val(),"wordcontent":$("#wordContent").val()},function(result){
 
-        if(result.status==200){
-            layer.alert(""+result.message+"", {
-                skin: 'layui-layer-molv' //样式类名
-                ,closeBtn: 0
-            },function () {
-                window.location.href="jy/index.html";
-            });
-        }else{
-            layer.alert(""+result.message+"", {
-                skin: 'layui-layer-molv' //样式类名
-                ,closeBtn: 0
-            });
-        }
-
-
-
-         });
-    });
     $("#button-addon2").click(function(){
         getName();
     });
