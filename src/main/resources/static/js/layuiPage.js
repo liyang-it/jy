@@ -22,6 +22,20 @@ function queryList(page) {
 function video_music(){
     layer.alert('见到你真的很高兴,接口正在写！', {icon: 6});
 }
+function vedio(){
+    //iframe窗
+
+    layer.open({
+        type: 2,
+        title: 'Hx',
+        shadeClose: true,
+        shade: false,
+        maxmin: true, //开启最大化最小化按钮
+        area: ['auto', '600px'],
+        content: '/resourceHtml.html'
+    });
+
+}
 layui.use(['laypage', 'layer'], function () {
     var laypage = layui.laypage
         , layer = layui.layer;
