@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jy.mapper.linkMapper">
+
+    <resultMap id="BaseResultMap" type="com.jy.entity.link">
+        <result column="id" jdbcType="INTEGER" property="id" />
+        <result column="linkAddres" jdbcType="VARCHAR" property="linkAddres" />
+        <result column="linkType" jdbcType="VARCHAR" property="linkType" />
+        <result column="linkByname" jdbcType="VARCHAR" property="linkByname" />
+        <result column="linkName" jdbcType="VARCHAR" property="linkName" />
+        <result column="linkDescribe" jdbcType="VARCHAR" property="linkDescribe" />
+    </resultMap>
+<!--
+<select id="queryLinkAll" resultMap="BaseResultMap" parameterType="com.jy.entity.link">
+            SELECT * FROM LINK where 1 = 1
+            <if test="id != null ">
+                and id=#{id}
+            </if>
+
+        <if test="linkType != null ">
+            and linkType=#{linkType}
+        </if>
+
+        <if test="linkByname != null ">
+            and linkByname=#{linkByname}
+        </if>
+
+    </select>
+-->
+    <select id="queryLinkByLinkType" resultMap="BaseResultMap" parameterType="java.lang.String">
+        SELECT linkAddres,linkByname,linkDescribe FROM link where 1 = 1 and linkType=#{type}
+
+
+
+    </select>
+
+</mapper>
