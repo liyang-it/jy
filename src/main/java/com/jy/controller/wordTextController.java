@@ -88,6 +88,7 @@ public class wordTextController extends baseController<wordText>{
         map.put("vedio", dictCache.CacheVedio);
         map.put("music", dictCache.CacheMusic);
         map.put("epub", dictCache.CacheEpub);
+        map.put("tools", dictCache.CacheEpub);
         return map;
     }
 }

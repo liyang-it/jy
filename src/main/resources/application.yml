@@ -1,8 +1,12 @@
 spring:
   profiles:
-    active: dev
+    active: pro
 server:
-  port: 9364
+  tomcat:
+    max-threads: 300
+    accept-count: 200
+    connection-timeout: 30000
+  port: 80
 #服务器端口为 80  本地 9364
 
 
@@ -24,6 +28,7 @@ spring:
             paths: /**
     thymeleaf:
       cache: false
+
 
 #当环境为生产时采用该配置
 ---

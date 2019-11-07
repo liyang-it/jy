@@ -29,6 +29,7 @@ class dictLineRunner implements CommandLineRunner {
         dictCache.CacheVedio=linkService.queryLinkByLinkType("vedio");
         dictCache.CacheMusic=linkService.queryLinkByLinkType("music");
         dictCache.CacheEpub=linkService.queryLinkByLinkType("epub");
+        dictCache.CacheTools=linkService.queryLinkByLinkType("tools");
 
         dictCache.dictCacheList = service.queryDict();
 
