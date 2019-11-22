@@ -1,6 +1,6 @@
 package com.jy.entity;
 
-public class link {
+public class link extends  baseEntity{
     private int id;
     private String linkAddres;
     private String linkType;
@@ -19,7 +19,9 @@ public class link {
         this.linkName = linkName;
         this.linkDescribe = linkDescribe;
     }
-
+    public link(String linkType){
+        this.linkType=linkType;
+    }
     public String getLinkDescribe() {
         return linkDescribe;
     }

@@ -11,8 +11,38 @@ import java.util.List;
 public class linkServiceImpl  implements linkService {
     @Autowired
     private linkMapper mapper;
+
     @Override
-    public List<link> queryLinkByLinkType(String type) {
-        return mapper.queryLinkByLinkType(type);
+    public List<link> queryLinkByLinkType(link link) {
+        return mapper.queryLinkByLinkType(link);
+    }
+
+    public void setMapper(linkMapper mapper) {
+        this.mapper = mapper;
+    }
+
+    @Override
+    public int deleteLinkById(int id) {
+        return mapper.deleteLinkById(id);
+    }
+
+    @Override
+    public int updateLink(link link) {
+        return mapper.updateLink(link);
+    }
+
+    @Override
+    public link selectLinkById(int id) {
+        return mapper.selectLinkById(id);
+    }
+
+    @Override
+    public List<link> queryLinkByLinkTypeAll(String type) {
+        return mapper.queryLinkByLinkTypeAll(type);
+    }
+
+    @Override
+    public int selectLinkCount() {
+        return mapper.selectLinkCount();
     }
 }

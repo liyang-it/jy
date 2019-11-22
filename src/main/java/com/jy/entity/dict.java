@@ -1,6 +1,6 @@
 package com.jy.entity;
 
-public class dict {
+public class dict extends baseEntity{
     private int id;
     private String key;
     private String value;

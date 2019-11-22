@@ -28,4 +28,19 @@ public class WordTextServiceImpl implements wordTextService {
     public void insertWordText(wordText wd) {
         mapper.insertWordText(wd);
     }
+
+    @Override
+    public int deleteWordTextById(int wordid) {
+        return mapper.deleteWordTextById(wordid);
+    }
+
+    @Override
+    public wordText selectWordTextById(int wordid) {
+        return mapper.selectWordTextById(wordid);
+    }
+
+    @Override
+    public int selectWordTextCount() {
+        return mapper.selectWordTextCount();
+    }
 }

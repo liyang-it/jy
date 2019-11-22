@@ -6,10 +6,12 @@ import com.jy.entity.link;
 import java.util.List;
 
 public class dictCache {
-    public static List<dict> dictCacheList;//字典数据
+    public static List<dict> dictCacheList;//字典数据(names)
+    public static List<dict> dictCacheLinkTypeList;//字典数据(linkType)
     public static List<link> CacheVedio;
     public static List<link> CacheMusic;
     public static List<link> CacheEpub;
+    public static List<link> CacheTools;
      /*
 
 

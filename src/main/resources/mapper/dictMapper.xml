@@ -9,9 +9,20 @@
 
     </resultMap>
 
-<select id="queryDict" resultMap="BaseResultMap" >
+<select id="queryDictByKey" resultMap="BaseResultMap" parameterType="java.lang.String">
 
-    SELECT * FROM dict
+    SELECT * FROM dict where `key`= #{type}
 </select>
+    <insert id="insertNames" parameterType="java.lang.String">
 
+        INSERT INTO dict ( `key`, `value`) VALUES ('names', #{value});
+    </insert>
+
+    <insert id="insertLinkType" parameterType="java.lang.String">
+
+        INSERT INTO dict ( `key`, `value`) VALUES ('linkType', #{value});
+    </insert>
+<delete id="deleteDictById" parameterType="int">
+    DELETE FROM dict where `id` = #{id}
+</delete>
 </mapper>

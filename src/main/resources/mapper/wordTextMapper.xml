@@ -26,7 +26,7 @@
             ornotimg = #{ornotimg}
         </if>
         order by createdtime desc
-        limit #{page},#{rows}
+        limit #{page},#{limit}
     </select>
     <select id="getRowsCount" resultType="int">
         SELECT COUNT(wordid) FROM wordtext
@@ -37,5 +37,14 @@
         values(#{wordtitle}, #{wordcontent}, #{createdtime}, #{userid}, #{ornotimg}, #{username} )
 
     </insert>
+    <delete id="deleteWordTextById" parameterType="int">
+        delete from wordtext where wordid=#{wordid}
+    </delete>
+<select id="selectWordTextById" parameterType="int" resultMap="BaseResultMap">
+    SELECT * FROM wordtext where wordid = #{wordid}
+</select>
 
+    <select id="selectWordTextCount" resultType="int">
+        SELECT COUNT(`wordid`) FROM  wordtext
+    </select>
 </mapper>

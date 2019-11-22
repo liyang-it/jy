@@ -26,4 +26,7 @@ public class baseController<T> {
     public Result successResult(String message){
         return new Result(200,message);
     }
+    public Result successResult(String message,boolean success,Object data){
+        return new Result(200,message,success,data);
+    }
 }

@@ -12,8 +12,24 @@ import java.util.List;
 public class dictServiceImpl implements dictService {
     @Autowired
     private dictMapper mapper;
+
     @Override
-    public List<dict> queryDict() {
-        return mapper.queryDict();
+    public List<dict> queryDictByKey(String type) {
+        return mapper.queryDictByKey(type);
+    }
+
+    @Override
+    public int insertNames(String value) {
+        return mapper.insertNames(value);
+    }
+
+    @Override
+    public int deleteDictById(int id) {
+        return mapper.deleteDictById(id);
+    }
+
+    @Override
+    public int insertLinkType(String value) {
+        return mapper.insertLinkType(value);
     }
 }
