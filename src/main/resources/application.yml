@@ -6,8 +6,8 @@ server:
     max-threads: 300
     accept-count: 200
     connection-timeout: 30000
-#  port: 9364
-  port: 80
+  port: 9364
+#  port: 80
 #服务器端口为 80  本地 9364
 
 

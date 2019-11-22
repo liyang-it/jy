@@ -43,9 +43,8 @@
             <property name="enableSubPackages" value="false" />
         </javaClientGenerator>
         <!-- 指定数据库表 -->
-        <table tableName="user"></table>
-        <table tableName="img_link"></table>
-        <table tableName="wordtext"></table>
+        <table tableName="link"></table>
+
 
 
         <!-- 有些表的字段需要指定java类型
