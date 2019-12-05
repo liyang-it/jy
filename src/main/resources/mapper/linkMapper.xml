@@ -60,4 +60,8 @@
     <select id="selectLinkCount" resultType="int">
         SELECT COUNT(`id`) FROM  link
     </select>
+
+    <insert id="insertLink" parameterType="com.jy.entity.link">
+        INSERT INTO link(`linkAddres`, `linkType`, `linkByname`, `linkName`, `linkDescribe`) values(#{linkAddres}, #{linkType}, #{linkByname}, #{linkName}, #{linkDescribe} )
+    </insert>
 </mapper>

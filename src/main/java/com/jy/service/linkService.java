@@ -12,4 +12,5 @@ public interface linkService {
     int updateLink(link link);
     link selectLinkById(int id);
     int selectLinkCount();
+    int insertLink(link link);
 }

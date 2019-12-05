@@ -12,7 +12,7 @@ $(function(){
 
             vedio+="  <li class=layui-timeline-item\" onclick=\"hrefGo('"+value.linkAddres+"')\">\n" +
                 "  <i class=\"layui-icon layui-timeline-axis\"></i>\n" +
-                "   <div class=\"layui-timeline-content layui-text\"><h3 class=\"layui-timeline-title\"  style=\"color: #0C0C0C;text-decoration-color: #1da1f2;text-decoration: underline;\" >"+value.linkByname+"</h3>" +
+                "   <div class=\"layui-timeline-content layui-text\"><h3 class=\"layui-timeline-title\"  style=\"color: #0C0C0C;text-decoration-color: #1da1f2;text-decoration: underline;\" >"+value.linkName+"</h3>" +
                 "<p  style=\"font-size: 12px;\">"+value.linkDescribe+"</p></div></li><hr style=\"size: 50px;;align-content: center; background-color: #1c7430;\">";
 
         });
@@ -21,7 +21,7 @@ $(function(){
 
             music+="  <li class=layui-timeline-item\" onclick=\"hrefGo('"+value.linkAddres+"')\">\n" +
                 "  <i class=\"layui-icon layui-timeline-axis\"></i>\n" +
-                "   <div class=\"layui-timeline-content layui-text\"><h3 class=\"layui-timeline-title\"  style=\"color: #0C0C0C;text-decoration-color: #1da1f2;text-decoration: underline;\" >"+value.linkByname+"</h3>" +
+                "   <div class=\"layui-timeline-content layui-text\"><h3 class=\"layui-timeline-title\"  style=\"color: #0C0C0C;text-decoration-color: #1da1f2;text-decoration: underline;\" >"+value.linkName+"</h3>" +
                 "<p  style=\"font-size: 12px;\">"+value.linkDescribe+"</p></div></li><hr style=\"size: 50px;;align-content: center; background-color: #1c7430;\">";
 
         });
@@ -30,7 +30,7 @@ $(function(){
 
             epub+="  <li class=layui-timeline-item\" onclick=\"hrefGo('"+value.linkAddres+"')\">\n" +
                 "  <i class=\"layui-icon layui-timeline-axis\"></i>\n" +
-                "   <div class=\"layui-timeline-content layui-text\"><h3 class=\"layui-timeline-title\"  style=\"color: #0C0C0C;text-decoration-color: #1da1f2;text-decoration: underline;\" >"+value.linkByname+"</h3>" +
+                "   <div class=\"layui-timeline-content layui-text\"><h3 class=\"layui-timeline-title\"  style=\"color: #0C0C0C;text-decoration-color: #1da1f2;text-decoration: underline;\" >"+value.linkName+"</h3>" +
                 "<p  style=\"font-size: 12px;\">"+value.linkDescribe+"</p></div></li><hr   style=\"size: 50px;;align-content: center; background-color: #1c7430;\">";
 
         });
@@ -40,7 +40,7 @@ $(function(){
 
             tools+="  <li class=layui-timeline-item\" onclick=\"hrefGo('"+value.linkAddres+"')\">\n" +
                 "  <i class=\"layui-icon layui-timeline-axis\"></i>\n" +
-                "   <div class=\"layui-timeline-content layui-text\"><h3 class=\"layui-timeline-title\"  style=\"color: #0C0C0C;text-decoration-color: #1da1f2;text-decoration: underline;\" >"+value.linkByname+"</h3>" +
+                "   <div class=\"layui-timeline-content layui-text\"><h3 class=\"layui-timeline-title\"  style=\"color: #0C0C0C;text-decoration-color: #1da1f2;text-decoration: underline;\" >"+value.linkName+"</h3>" +
                 "<p  style=\"font-size: 12px;\">"+value.linkDescribe+"</p></div></li><hr   style=\"size: 50px;;align-content: center; background-color: #1c7430;\">";
 
         });

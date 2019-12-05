@@ -45,4 +45,9 @@ public class linkServiceImpl  implements linkService {
     public int selectLinkCount() {
         return mapper.selectLinkCount();
     }
+
+    @Override
+    public int insertLink(link link) {
+        return mapper.insertLink(link);
+    }
 }
