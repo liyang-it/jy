@@ -50,9 +50,22 @@ public class pageController {
 
     @RequestMapping(value = "/resourceHtml.html")
     public String resourceHtml(){
-
-
         return "jy/resourceHtml";
+    }
+
+    @RequestMapping(value = "/resource")
+    public String coPyresourceHtml(){
+        return "jy/coPyresourceHtml";
+    }
+
+    @RequestMapping(value = "/1")
+    public String coPyresourceHtml1(){
+        return "jy/1";
+    }
+
+    @RequestMapping(value = "/form")
+    public String formTest(){
+        return "jy/formTest";
     }
 
 

@@ -4,17 +4,17 @@ import com.jy.entity.link;
 import com.jy.entity.wordText;
 import com.jy.result.Result;
 import com.jy.result.bindResultError;
-import com.jy.result.layuiTable;
+
 import com.jy.service.dictCache;
 import com.jy.service.wordTextService;
 import com.jy.util.getValue;
-import com.sun.deploy.net.HttpResponse;
+
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpRequest;
+
 import org.springframework.validation.BindingResult;
-import org.springframework.validation.annotation.Validated;
+
 import org.springframework.web.bind.annotation.*;
-import com.jy.config.Validated.*;
+
 
 import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;

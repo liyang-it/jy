@@ -22,10 +22,10 @@ class dictLineRunner implements CommandLineRunner {
     public reloadSource source;
 
     @Override
-    public void run(String... args) throws Exception {
-        System.out.println("-----------加载数据字典---------");
+        public void run(String... args) throws Exception {
+            System.out.println("-----------加载数据字典---------");
 
-        source.reloadNamesAndLink();
+            source.reloadNamesAndLink();
 
 
         System.out.println("----------数据字典加载完成--------------");
