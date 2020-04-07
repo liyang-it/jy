@@ -35,9 +35,11 @@ public class wordTextController extends baseController<wordText>{
 
     @RequestMapping(value = "/queryList.html")
     @ResponseBody
-    public List<wordText> queryList(wordText wd){
-        wd.setPage((wd.getPage()-1)*wd.getLimit());
-      List<wordText> list=  textService.queryWordtextPage(wd);
+    public List<wordText> queryList(wordText wt){
+
+
+
+      List<wordText> list=  textService.queryWordtextPage(wt);
       return list;
 
     }
@@ -97,9 +99,12 @@ public class wordTextController extends baseController<wordText>{
     @ResponseBody
     @RequestMapping(value ="/adminGetwordText.json")
     @CrossOrigin
-    public Map<String,Object> adminGetwordText( wordText w, HttpServletResponse response){
+    public Map<String,Object> adminGetwordText(int page,Integer limit, HttpServletResponse response){
         Map<String,Object> map=new HashMap<String,Object>();
-        List<wordText> list=textService.queryWordtextPage(w);
+        wordText word=new wordText();
+        word.setPage(page);
+        word.setLimit(limit);
+        List<wordText> list=textService.queryWordtextPage(word);
         int count=textService.selectWordTextCount();
         map.put("code",0);
         map.put("count",count);

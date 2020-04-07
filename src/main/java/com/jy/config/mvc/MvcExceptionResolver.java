@@ -11,6 +11,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
+/**
+ * 拦截错误请求，返回错误信息
+ */
 public class MvcExceptionResolver implements HandlerExceptionResolver {
     private Logger logger=Logger.getLogger(MvcExceptionResolver.class);
 

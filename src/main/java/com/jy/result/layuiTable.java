@@ -15,6 +15,10 @@ public class layuiTable {
         this.data = data;
     }
 
+    public layuiTable() {
+
+    }
+
     public int getCode() {
         return code;
     }

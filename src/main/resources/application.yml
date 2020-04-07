@@ -1,12 +1,14 @@
 spring:
   profiles:
-    active: dev
+    active: pro
 server:
   tomcat:
     max-threads: 300
     accept-count: 200
     connection-timeout: 30000
-  port: 9364
+  port: 80
+  servlet:
+    context-path: /jy
 #  port: 80
 #服务器端口为 80  本地 9364
 
@@ -38,7 +40,7 @@ spring:
   datasource:
     username: root
     password: root
-    url: jdbc:mysql://localhost:3306/jyweb?useUnicode=true&characterEncoding=utf-8&useSSL=true&autoReconnect=true&failOverReadOnly=false&serverTimezone=CTT
+    url: jdbc:mysql://47.75.63.2:3306/jyweb?useUnicode=true&characterEncoding=utf-8&useSSL=true&autoReconnect=true&failOverReadOnly=false&serverTimezone=CTT
     driver-class-name: com.mysql.jdbc.Driver
     resources:
       chain:
@@ -60,8 +62,5 @@ mybatis:
   # spring boot集成mybatis的方式打印sql
   configuration:
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
-
-
-
 
 
