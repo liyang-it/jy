@@ -214,9 +214,15 @@
                         background: '#ffe1e1'
                     });
                     res.data.status == 200 ? add_vm.$options.methods.resetForm() : null;
-
-
-                });
+                },
+                function(res){
+                    vant.Notify({
+                        message: '新增失败!',
+                        color: '#ad0000',
+                        background: '#ffe1e1'
+                    });
+                }
+                );
 
             },
             resetForm() {
