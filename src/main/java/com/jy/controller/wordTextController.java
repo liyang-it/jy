@@ -6,6 +6,7 @@ import com.jy.result.Result;
 import com.jy.result.bindResultError;
 
 import com.jy.service.dictCache;
+import com.jy.service.linkService;
 import com.jy.service.wordTextService;
 import com.jy.util.getValue;
 
@@ -31,6 +32,9 @@ import java.util.Map;
 public class wordTextController extends baseController<wordText>{
     @Autowired
     private wordTextService textService;
+
+    @Autowired
+    private linkService linkService;
     public getValue getValue=new getValue();
 
     @RequestMapping(value = "/queryList.html")
@@ -135,6 +139,23 @@ public class wordTextController extends baseController<wordText>{
         }
 
         return  successResult("获取成功",true,textService.selectWordTextById(wordid));
+    }
+    /**
+     * 新增 网址
+     */
+    @ResponseBody
+    @RequestMapping( value = "/addResource.json")
+    @CrossOrigin
+    public Result addResource(@RequestParam String name,@RequestParam String link,@RequestParam String type,@RequestParam String desc){
+        link link1 = new link();
+        link1.setLinkDescribe(desc);
+        link1.setLinkType(type);
+        link1.setLinkName(name);
+        link1.setLinkAddres(link);
+        int i = linkService.insertLink(link1);
+
+        return successResult(i == 1 ? "新增成功！" : "新增失败");
+
     }
 
 }
