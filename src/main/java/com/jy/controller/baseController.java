@@ -5,6 +5,10 @@ import com.jy.result.bindResultError;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.ObjectError;
 
+/**
+ * controller 控制层的父类，可以快速返回错误或者成功json
+ * @param <T>
+ */
 public class baseController<T> {
 
 

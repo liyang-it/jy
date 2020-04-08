@@ -14,6 +14,9 @@ import org.springframework.stereotype.Component;
 import java.io.IOException;
 import java.util.List;
 
+/**
+ * springBoot启动时加载类，可以用于springboot启动时 加载一些数据
+ */
 @Component
 @Order(value = 1)
 //Springboot 启动时 优先级

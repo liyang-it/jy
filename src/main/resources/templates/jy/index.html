@@ -5,26 +5,27 @@
     <!--- basic page needs
     ================================================== -->
     <meta charset="utf-8">
-    <title>简语HOME</title>
+    <title>简语</title>
     <meta name="description" content="">
     <meta name="author" content="">
 
     <!-- mobile specific metas
     ================================================== -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="shortcut icon" href="/jy/favicon.ico">
 
     <!-- CSS
     ================================================== -->
-    <link rel="stylesheet" href="/epitome/css/base.css">
-    <link rel="stylesheet" href="/epitome/css/vendor.css">
-    <link rel="stylesheet" href="/epitome/css/main.css">
-    <link rel="stylesheet" href="/layui/css/layui.css" media="all">
+    <link rel="stylesheet" href="/jy/epitome/css/base.css">
+    <link rel="stylesheet" href="/jy/epitome/css/vendor.css">
+    <link rel="stylesheet" href="/jy/epitome/css/main.css">
+    <link rel="stylesheet" href="/jy/layui/css/layui.css" media="all">
+    <link rel="stylesheet" href="/jy/vant/index.css">
 
     <!-- script
     ================================================== -->
-    <script src="/epitome/js/modernizr.js"></script>
-    <script src="/epitome/js/pace.min.js"></script>
+    <script src="/jy/epitome/js/modernizr.js"></script>
+    <script src="/jy/epitome/js/pace.min.js"></script>
 
     <!-- favicons
     ================================================== -->
@@ -46,7 +47,7 @@
 
     <div class="header-logo">
         <a class="site-logo" href="index.html">
-            <img src="/image/logo.svg" alt="简语">
+            <img src="/jy/image/logo.svg" alt="简语">
         </a>
     </div>
 
@@ -62,7 +63,7 @@
                 }
 
             </script>
-            <li><a href="/resourceHtml.html" title="contact us">资源汇总</a></li>
+            <li><a href="/jy/resource" title="contact us">资源汇总</a></li>
             <li><a href="javascript:video_music()" title="contact us">关于我</a></li>
         </ul>
 
@@ -236,7 +237,15 @@
 
 </section> <!-- end s-about -->
 
+<div id="app">
 
+    <van-pagination
+            v-model="currentPage"
+            :page-count="12"
+            mode="simple"
+    />
+
+</div>
 <!--分页-->
 <!-- footer
 ================================================== -->
@@ -246,70 +255,34 @@
                 href="/" title="李杨">李杨</a>
 </span> <span>本人技术有限 by 还望大家别发布广告,淫秽内容</span>
         </div>
-
-        <div class="ss-go-top">
-            <a class="smoothscroll" title="Back to Top" href="#top"></a>
-        </div>
     </div>
 </footer>
 
 
-<!-- photoswipe background
-================================================== -->
-<div aria-hidden="true" class="pswp" role="dialog" tabindex="-1">
 
-    <div class="pswp__bg"></div>
-    <div class="pswp__scroll-wrap">
-
-        <div class="pswp__container">
-            <div class="pswp__item"></div>
-            <div class="pswp__item"></div>
-            <div class="pswp__item"></div>
-        </div>
-
-        <div class="pswp__ui pswp__ui--hidden">
-            <div class="pswp__top-bar">
-                <div class="pswp__counter"></div>
-                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
-                <button class="pswp__button pswp__button--share" title=
-                        "Share"></button>
-                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
-                <button class="pswp__button pswp__button--zoom" title=
-                        "Zoom in/out"></button>
-                <div class="pswp__preloader">
-                    <div class="pswp__preloader__icn">
-                        <div class="pswp__preloader__cut">
-                            <div class="pswp__preloader__donut"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
-                <div class="pswp__share-tooltip"></div>
-            </div>
-            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button>
-            <button class="pswp__button pswp__button--arrow--right" title=
-                    "Next (arrow right)"></button>
-            <div class="pswp__caption">
-                <div class="pswp__caption__center"></div>
-            </div>
-        </div>
-
-    </div>
-
-</div><!-- end photoSwipe background -->
 
 <!-- Java Script
 ================================================== -->
-<script src="/epitome/js/jquery-3.2.1.min.js"></script>
-<script src="/epitome/js/plugins.js"></script>
-<script src="/epitome/js/main.js"></script>
-<script src="/layui/layui.all.js" charset="utf-8"></script>
-<script src="/js/layuiPage.js"></script>
+<script src="/jy/epitome/js/jquery-3.2.1.min.js"></script>
+<script src="/jy/epitome/js/plugins.js"></script>
+<script src="/jy/epitome/js/main.js"></script>
+<script src="/jy/layui/layui.all.js" charset="utf-8"></script>
+<script src="/jy/js/layuiPage.js"></script>
+<!-- import Vue before Element -->
+<script src="/jy/vue/vue.min.js"></script>
+<link rel="stylesheet" href="/jy/vant/index.css">
 
 <script>
-
+ const app_vm = new Vue({
+    el: '#app',
+     data() {
+         return  {
+             currentPage: 1
+         }
+     }
+ });
 
 </script>
 
 </body>
+</html>

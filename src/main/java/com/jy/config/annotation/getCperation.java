@@ -3,7 +3,7 @@ package com.jy.config.annotation;
 import java.lang.annotation.*;
 
 /*
-记录操作
+记录操作 注解
  */
 @Target(ElementType.METHOD)
 @Retention(RetentionPolicy.RUNTIME)

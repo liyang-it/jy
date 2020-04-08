@@ -3,6 +3,9 @@ package com.jy.config.mvc;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * json 返回工具
+ */
 public class AjaxUtil {
 
         //得到一个map

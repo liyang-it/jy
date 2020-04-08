@@ -42,7 +42,7 @@ $(function(){
 
 });
 function getName(){
-    $.get("/wt/getRandomName.json",function(data){
+    $.get("/jy/wt/getRandomName.json",function(data){
         $("#username").val(data);
     });
 

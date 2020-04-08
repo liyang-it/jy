@@ -14,16 +14,16 @@ import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry
 @SpringBootApplication
 @Configuration
 @MapperScan("com.jy.mapper")
-@EnableTransactionManagement
-public class JyApplication {
+		@EnableTransactionManagement
+		public class JyApplication {
 
-	@Bean
-	public reloadSource reloadSource(){
-		return new reloadSource();
-	}
-	public static void main(String[] args) {
+			@Bean
+			public reloadSource reloadSource(){
+				return new reloadSource();
+			}
+			public static void main(String[] args) {
 
-		SpringApplication.run(JyApplication.class, args);
+				SpringApplication.run(JyApplication.class, args);
 	}
 
 

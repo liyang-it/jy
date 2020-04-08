@@ -1,6 +1,7 @@
 package com.jy.config.aspect;
 /*
-用于记录请求
+ aop 切点 切入到controller 方法里 用于记录请求
+
  */
 import com.jy.config.constants.constants;
 import com.jy.util.getIP;

@@ -6,11 +6,9 @@ import com.jy.result.Result;
 import com.jy.result.bindResultError;
 
 import com.jy.service.dictCache;
-import com.jy.service.linkService;
 import com.jy.service.wordTextService;
 import com.jy.util.getValue;
 
-import com.jy.util.reloadSource;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import org.springframework.validation.BindingResult;
@@ -30,135 +28,113 @@ import java.util.Map;
  */
 @RestController
 @RequestMapping(value = "/wt")
-public class wordTextController extends baseController<wordText> {
-  @Autowired
-  private wordTextService textService;
-  @Autowired
-  private linkService linkService;
-  @Autowired
-  public reloadSource source;
-  public getValue getValue = new getValue();
+public class wordTextController extends baseController<wordText>{
+    @Autowired
+    private wordTextService textService;
+    public getValue getValue=new getValue();
 
-  @RequestMapping(value = "/queryList.html")
-  @ResponseBody
-  public List<wordText> queryList(wordText wd) {
-    wd.setPage((wd.getPage() - 1) * wd.getLimit());
-    List<wordText> list = textService.queryWordtextPage(wd);
-    return list;
+    @RequestMapping(value = "/queryList.html")
+    @ResponseBody
+    public List<wordText> queryList(wordText wt){
 
-  }
 
-  @RequestMapping(value = "/queryListCount.json")
-  @ResponseBody
-  public int queryListCount() {
 
-    return textService.getRowsCount();
-  }
-
-  @RequestMapping(value = "/getRandomName.json")
-  @ResponseBody
-  @CrossOrigin
-  public String getRandomName() {
-    return getValue.getRandomName();
-  }
-
-  @RequestMapping(value = "/insertWordText.json", method = RequestMethod.POST)
-  @ResponseBody
-  @CrossOrigin
-  public Result insertWordText(@Valid wordText text, BindingResult bind) {
-    bindResultError br = checkBindResult(bind);
-
-    if (br.isBind()) {
-      return errorResult(br.getMessage());
-    }
-    try {
-      text.setCreatedtime(new Date());
-      text.setOrnotimg(1);
-      text.setUserid(null);
-      text.setWordcontent(getValue.getlineContent(text.getWordcontent()));
-      textService.insertWordText(text);
-    } catch (Exception e) {
-      return errorResult(e.getMessage());
+      List<wordText> list=  textService.queryWordtextPage(wt);
+      return list;
 
     }
+    @RequestMapping(value = "/queryListCount.json")
+    @ResponseBody
+    public int queryListCount(){
 
-    return successResult("打卡成功");
-  }
-
-  @RequestMapping("/dateTest.json")
-  @ResponseBody
-  public List<link> dateTest() {
-    return dictCache.CacheVedio;
-  }
-
-  //获取资源
-  @RequestMapping("/getResource.json")
-  @ResponseBody
-  public Map<String, List<link>> getResource() {
-    Map<String, List<link>> map = new HashMap<String, List<link>>();
-
-    map.put("vedio", dictCache.CacheVedio);
-    map.put("music", dictCache.CacheMusic);
-    map.put("epub", dictCache.CacheEpub);
-    map.put("tools", dictCache.CacheTools);
-    return map;
-  }
-
-  //新增网址资源
-  @RequestMapping(value = "/addResource.json", method = RequestMethod.POST)
-  @ResponseBody
-  @CrossOrigin
-  public Result addResource(String name, String link, String type, String desc) {
-    link linkClass = new link();
-    linkClass.setLinkName(name);
-    linkClass.setLinkAddres(link);
-    linkClass.setLinkType(type);
-    linkClass.setLinkDescribe(desc);
-    int result = linkService.insertLink(linkClass);
-    source.reloadNamesAndLink();
-
-
-    return result == 1 ? successResult("新增成功") : errorResult("新增失败");
-  }
-
-  //后台系统获取 简语列表
-  @ResponseBody
-  @RequestMapping(value = "/adminGetwordText.json")
-  @CrossOrigin
-  public Map<String, Object> adminGetwordText(wordText w, HttpServletResponse response) {
-    Map<String, Object> map = new HashMap<String, Object>();
-    List<wordText> list = textService.queryWordtextPage(w);
-    int count = textService.selectWordTextCount();
-    map.put("code", 0);
-    map.put("count", count);
-    map.put("data", list);
-    return map;
-  }
-
-  //后台系统获取
-  @ResponseBody
-  @RequestMapping(value = "/deletewordTextByid.json")
-  @CrossOrigin
-  public Result deletewordTextByid(@Valid Integer wordid) {
-
-    if (wordid == null) {
-      return errorResult("ID不能为空");
+        return textService.getRowsCount();
     }
-    int success = textService.deleteWordTextById(wordid);
-    return successResult("删除成功");
-  }
+    @RequestMapping(value ="/getRandomName.json")
+    @ResponseBody
+    @CrossOrigin
+    public String getRandomName(){
+        return getValue.getRandomName();
+    }
+    @RequestMapping(value ="/insertWordText.json",method = RequestMethod.POST)
+    @ResponseBody
+    @CrossOrigin
+    public Result insertWordText(@Valid wordText text, BindingResult bind){
+        bindResultError br=checkBindResult(bind);
 
-  //后台系统获取 简语详情
-  @ResponseBody
-  @RequestMapping(value = "/selectWordTextById.json")
-  @CrossOrigin
-  public Result selectWordTextById(@Valid Integer wordid) {
+        if(br.isBind()){
+            return errorResult(br.getMessage());
+        }
+        try {
+            text.setCreatedtime(new Date());
+            text.setOrnotimg(1);
+            text.setUserid(null);
+            text.setWordcontent(getValue.getlineContent(text.getWordcontent()));
+            textService.insertWordText(text);
+        }catch (Exception e) {
+            return errorResult(e.getMessage());
 
-    if (wordid == null) {
-      return errorResult("ID不能为空");
+        }
+
+        return successResult("打卡成功");
+    }
+    @RequestMapping("/dateTest.json")
+    @ResponseBody
+    public List<link> dateTest(){
+        return dictCache.CacheVedio;
     }
 
-    return successResult("获取成功", true, textService.selectWordTextById(wordid));
-  }
+    //获取资源
+    @RequestMapping("/getResource.json")
+    @ResponseBody
+    public Map<String,List<link>> getResource(){
+        Map<String,List<link>> map=new HashMap<String,List<link>>();
+
+        map.put("vedio", dictCache.CacheVedio);
+        map.put("music", dictCache.CacheMusic);
+        map.put("epub", dictCache.CacheEpub);
+        map.put("tools", dictCache.CacheTools);
+        return map;
+    }
+    //后台系统获取 简语列表
+    @ResponseBody
+    @RequestMapping(value ="/adminGetwordText.json")
+    @CrossOrigin
+    public Map<String,Object> adminGetwordText(int page,Integer limit, HttpServletResponse response){
+        Map<String,Object> map=new HashMap<String,Object>();
+        wordText word=new wordText();
+        word.setPage(page);
+        word.setLimit(limit);
+        List<wordText> list=textService.queryWordtextPage(word);
+        int count=textService.selectWordTextCount();
+        map.put("code",0);
+        map.put("count",count);
+        map.put("data",list);
+        return map;
+    }
+    //后台系统获取
+    @ResponseBody
+    @RequestMapping(value ="/deletewordTextByid.json")
+    @CrossOrigin
+    public Result deletewordTextByid(@Valid  Integer wordid){
+
+        if(wordid==null){
+            return errorResult("ID不能为空");
+        }
+        int success= textService.deleteWordTextById(wordid);
+        return  successResult("删除成功");
+    }
+
+    //后台系统获取 简语详情
+    @ResponseBody
+    @RequestMapping(value ="/selectWordTextById.json")
+    @CrossOrigin
+    public Result selectWordTextById(@Valid  Integer wordid){
+
+        if(wordid==null){
+            return errorResult("ID不能为空");
+        }
+
+        return  successResult("获取成功",true,textService.selectWordTextById(wordid));
+    }
 
 }
