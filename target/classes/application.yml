@@ -1,12 +1,28 @@
 spring:
   profiles:
-    active: pro
+    active: dev
+#配置redis  使用 1数据库
+  redis:
+    database: 1
+    host: 127.0.0.1
+    port: 6379
+    password:
+#redis 最大连接数 负数 没有限制
+    lettuce:
+      pool:
+        max-active: -1
+        max-wait: 1
+        max-idle: 200
+        min-idle: 50
+
 server:
   tomcat:
     max-threads: 300
     accept-count: 200
     connection-timeout: 30000
-  port: 9364
+  port: 1975
+  servlet:
+    context-path: /jy
 #  port: 80
 #服务器端口为 80  本地 9364
 
@@ -60,8 +76,3 @@ mybatis:
   # spring boot集成mybatis的方式打印sql
   configuration:
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
-
-
-
-
-

@@ -11,6 +11,7 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
+import javax.annotation.Resource;
 import java.io.IOException;
 import java.util.List;
 
@@ -21,7 +22,7 @@ import java.util.List;
 @Order(value = 1)
 //Springboot 启动时 优先级
 class dictLineRunner implements CommandLineRunner {
-    @Autowired
+    @Resource
     public reloadSource source;
 
     @Override

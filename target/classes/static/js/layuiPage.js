@@ -6,7 +6,7 @@ $(function () {
 
 function queryList(page) {
 
-    $.post("/wt/queryList.html", {"page": page}, function (data) {
+    $.post("/jy/wt/queryList.html", {"page": page,"limit" : 6}, function (data) {
 
         for (var i = 0; i < data.length; i++) {
 
@@ -32,7 +32,7 @@ function addWordTextGo(){
         shade: false,
         maxmin: true, //开启最大化最小化按钮
         area: ['360px', '600px'],
-        content: '/addWordText.html'
+        content: '/jy/addWordText.html'
         ,btn: ['今日打卡', '没话可写'] //只是为了演示
         ,yes: function(index){
        // $(that).click(); //此处只是为了演示，实际使用可以剔除
@@ -40,7 +40,7 @@ function addWordTextGo(){
             var username=body.find("#username").val();
             var wordTitle=body.find("#wordTitle").val();
             var wordContent=body.find("#wordContent").val();
-            $.post("/wt/insertWordText.json",{"username":username,"wordtitle":wordTitle,"wordcontent":wordContent},function(result){
+            $.post("/jy/wt/insertWordText.json",{"username":username,"wordtitle":wordTitle,"wordcontent":wordContent},function(result){
                 if(result.status==200){
                     layer.alert(""+result.message+"", {
                         skin: 'layui-layer-lan' //样式类名
@@ -67,7 +67,7 @@ layui.use(['laypage', 'layer'], function () {
         , layer = layui.layer;
 
 
-    $.post("/wt/queryListCount.json", function (data) {
+    $.post("/jy/wt/queryListCount.json", function (data) {
 
 
         laypage.render({

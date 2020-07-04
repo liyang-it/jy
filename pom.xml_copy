@@ -370,6 +370,11 @@
                 <configuration>
                     <verbose>true</verbose>
                     <fork>true</fork>
+                            <!--笔记本java位置
+
+                                            F:\JAVA\bin\javac
+                                            公司电脑java位置  D:/jdk8/bin/javac
+                                            -->
                     <executable>F:\JAVA\bin\javac</executable>
                 </configuration>
             </plugin>

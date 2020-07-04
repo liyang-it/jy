@@ -14,9 +14,9 @@ import javax.annotation.Resource;
  */
 
 public class reloadSource {
-    @Autowired
+    @Resource
     private dictService service;
-    @Autowired
+    @Resource
     private linkService linkService;
 
 

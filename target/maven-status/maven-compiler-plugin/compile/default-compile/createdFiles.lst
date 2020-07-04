@@ -21,8 +21,10 @@ com\jy\entity\dict.class
 com\jy\config\mvc\mvcConfig.class
 com\jy\mapper\wordTextMapper.class
 com\jy\config\annotation\getCperation.class
+com\jy\util\redisUtils.class
 com\jy\entity\baseEntity.class
 com\jy\service\dictService.class
+com\jy\dataBase\kingDeeBase.class
 com\jy\config\Validated\ValidatorConfiguration.class
 com\jy\service\dictCache.class
 com\jy\mapper\dictMapper.class

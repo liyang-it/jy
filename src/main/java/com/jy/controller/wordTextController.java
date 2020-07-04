@@ -10,6 +10,7 @@ import com.jy.service.linkService;
 import com.jy.service.wordTextService;
 import com.jy.util.getValue;
 
+import com.jy.util.reloadSource;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import org.springframework.validation.BindingResult;
@@ -17,6 +18,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
 
+import javax.annotation.Resource;
 import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
 import java.util.Date;
@@ -30,6 +32,8 @@ import java.util.Map;
 @RestController
 @RequestMapping(value = "/wt")
 public class wordTextController extends baseController<wordText>{
+    @Resource
+    private reloadSource reloadSource;
     @Autowired
     private wordTextService textService;
 
@@ -151,11 +155,42 @@ public class wordTextController extends baseController<wordText>{
         link1.setLinkDescribe(desc);
         link1.setLinkType(type);
         link1.setLinkName(name);
-        link1.setLinkAddres(link);
+        int index = link.indexOf("http");
+        if(index != -1){
+            link1.setLinkAddres(link);
+        }else{
+            link = "http://"+link;
+            link1.setLinkAddres(link);
+
+        }
+
         int i = linkService.insertLink(link1);
+
 
         return successResult(i == 1 ? "新增成功！" : "新增失败");
 
     }
+
+    /**
+     * 刷新资源
+     */
+    @ResponseBody
+    @RequestMapping( value = "/reloadResource.json")
+    @CrossOrigin
+    public Result reloadResource(){
+        String message = "刷新成功";
+        try {
+
+            reloadSource.reloadNamesAndLink();//重新刷新资源
+        }catch (Exception e){
+            e.printStackTrace();
+            message= "刷新失败！原因:"+e.getMessage();
+        }
+
+
+        return successResult(message);
+
+    }
+
 
 }

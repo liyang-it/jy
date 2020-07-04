@@ -1357,12 +1357,12 @@ input::-moz-focus-inner {
 }
 
 .pgn__prev {
-  background-image: url("/image/hd.svg");
+  background-image: url("/jy/image/hd.svg");
   left: 0;
 }
 
 .pgn__next {
-  background-image: url("/image/jw.svg");
+  background-image: url("/jy/image/jw.svg");
   right: 0;
 }
 
@@ -1879,7 +1879,7 @@ input::-moz-focus-inner {
   background-color: #02182c;
   background-repeat: no-repeat;
   background-position: top center;
-  background-image: url(/image/xuezhiqian2.JPG);
+  background-image: url(/jy/image/xuezhiqian2.JPG);
   background-size: cover;
   position: absolute;
   top: 20%;
@@ -1900,7 +1900,7 @@ input::-moz-focus-inner {
 }
 
 .intro-grid {
-  background-image: url(/image/xuezhiqian2.JPG);
+  background-image: url(/jy/image/xuezhiqian2.JPG);
   background-size: 24px 24px;
   opacity: .15;
   position: absolute;
@@ -2223,11 +2223,11 @@ input::-moz-focus-inner {
 }
 
 .timeline__icon--work {
-  background-image: url(/image/hd.svg);
+  background-image: url(/jy/image/hd.svg);
 }
 
 .timeline__icon--education {
-  background-image: url(/image/jw.svg);
+  background-image: url(/jy/image/jw.svg);
 }
 
 .timeline__block {
@@ -3459,7 +3459,7 @@ footer a:visited {
   transition: all .3s;
   background-repeat: no-repeat;
   background-position: center center;
-  background-image: url(/image/jw.svg);
+  background-image: url(/jy/image/jw.svg);
   background-size: 10px 16px;
   position: relative;
 }

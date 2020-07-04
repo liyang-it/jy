@@ -53,7 +53,7 @@ public class pageController {
         return "jy/resourceHtml";
     }
 
-    @RequestMapping(value = "/resource")
+    @RequestMapping(value = "/resource.html")
     public String coPyresourceHtml(){
         return "jy/coPyresourceHtml";
     }
