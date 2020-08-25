@@ -21,6 +21,7 @@
             margin-left: 30%;
             width: 200px;
         }
+        .copyBtn{}
     </style>
 </head>
 <body>
@@ -37,7 +38,18 @@
 <div id="select">
     <van-action-sheet v-model="showSelect" :actions="actions" @select="onSelect" safe-area-inset-bottom="true"/>
 </div>
+<div id="fx">
+    <van-share-sheet
+            v-model="showShare"
+            title="网址已更新到正式域名了喔: www.liyangit.top"
+            :options="sheets"
+            @select="select_sheet"
+    />
+
+</div>
+
 <div id="add">
+
     <van-popup
             v-model="showAdd"
             position="bottom"
@@ -119,14 +131,36 @@
 
 
 </div>
-
+<button class="copyBtn" id="copyClick"></button>
 <!-- import Vue before Element -->
+<script src="https://cdn.bootcss.com/clipboard.js/1.7.1/clipboard.min.js"></script>
 <script src="https://cdn.bootcdn.net/ajax/libs/vue/2.6.11/vue.min.js"></script>
 <script src="https://cdn.bootcdn.net/ajax/libs/axios/0.19.2/axios.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/vant@2.8/lib/vant.min.js"></script>
 <script src="https://cdn.bootcdn.net/ajax/libs/element-ui/2.13.2/index.js"></script>
 
 <script>
+
+    // 使用类选择器 copyBtn  点击后直接返回复制的内容
+    var clipboard = new Clipboard('.copyBtn', {
+        // 点击copy按钮，直接通过text直接返回复印的内容
+        text: function() {
+            console.error('http://www.liyangit.top');
+            return 'http://www.liyangit.top';
+
+
+        }
+    });
+
+    clipboard.on('success', function(e) {
+        vant.Toast.success('复制成功');
+    });
+
+    clipboard.on('error', function(e) {
+        vant.Toast.fail('复制失败!');
+    });
+
+
     const head_vm = new Vue({
         el: '#head',
         methods: {
@@ -167,6 +201,24 @@
 
     });
 
+    const fx_vm = new Vue({
+        el: '#fx',
+        data:function() {
+            return {
+                showShare: true,
+                sheets: [{name: '复制链接', icon: 'link'}],
+            }
+        },
+      methods:{
+              select_sheet(option) {
+                  //复制链接
+                  //alert(option.name);
+                  document.getElementById("copyClick").click();
+
+              }
+      }
+
+    });
     const add_vm = new Vue({
         el: '#add',
         data: function () {
@@ -176,7 +228,8 @@
                     name: '',
                     link: '',
                     type: [],
-                    desc: ''
+                    desc: '',
+
                 },
                 rules: {
                     name: [
@@ -192,6 +245,11 @@
             }
         },
         methods: {
+            select_sheet(option){
+                //复制链接
+                alert(option.name);
+                document.getElementById("copyClick").click()
+            },
             submitForm() {
                 if (add_vm.sizeForm.name == '' || add_vm.sizeForm.name.length == 0) {
                     vant.Notify({type: 'danger', message: '信息未填写完整！'});
