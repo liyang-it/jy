@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>今天你是什么状态？简语新增</title>
+    <link rel="shortcut icon" href="/jy/favicon1.ico">
+
+    <link rel="stylesheet" href="/jy/layui/css/layui.css" media="all">
+    <link rel="stylesheet" href="/jy/Stalled/css/bootstrap.css">
+    <link rel="stylesheet" href="/jy/Stalled/css/style.css">
+    <link rel="stylesheet" href="/jy/Stalled/css/font-awesome.css">
+    <style>
+        body{margin: 10px;}
+        .demo-carousel{height: 200px; line-height: 200px; text-align: center;}
+    </style>
+
+
+
+</head>
+<body>
+<!--主要的-->
+<div class="layui-tab layui-tab-brief" lay-filter="demo">
+    <!--头部-->
+    <blockquote class="layui-elem-quote layui-quote-nm layui-hide" id="footer">愿你所有的噩梦，都能梦想成真！</blockquote>
+    <!--主体-->
+    <div class="layui-tab-content">
+        <div class="layui-tab-item layui-show">
+
+    <!--视频-->
+
+            <script src='//player.polyv.net/script/polyvplayer.min.js'></script>
+            <div id='f840f68b2e283c8122bc415a2ae59fee_f'></div>
+            <hr class="layui-bg-gray">
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" id="username"  aria-label="Recipient's username" aria-describedby="button-addon2">
+                <div class="input-group-append">
+                    <button class="btn btn-outline-secondary" type="button" id="button-addon2" >随机</button>
+                </div>
+            </div>
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" id="wordTitle"   placeholder="给这一段文字取个标题呗">
+
+            </div>
+            <div class="input-group mb-3">
+                <textarea onmouseout="this.value=this.value.replace(/\uD83C[\uDF00-\uDFFF]|\uD83D[\uDC00-\uDE4F]|[\uD800-\uDBFF]|[\uDC00-\uDFFF]|[^\u0020-\u007E\u00A0-\u00BE\u2E80-\uA4CF\uF900-\uFAFF\uFE30-\uFE4F\uFF00-\uFFEF\u0080-\u009F\u2000-\u201f\u2026\u2022\u20ac\r\n]/g,'')" onblur="this.value = this.value.trim();"  placeholder="这里描述一下你的今天，禁止输入特殊表情符号" class="form-control" id="wordContent" style="overflow-x:hidden" rows="5"></textarea>
+
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<script src="/jy/Stalled/js/jquery-2.2.3.min.js"></script>
+<script src="/jy/Stalled/js/bootstrap.js"></script>
+<script src="/jy/layui/layui.all.js" charset="utf-8"></script>
+<script src="/jy/js/addWordText.js"></script>
+
+</body>
+</html>

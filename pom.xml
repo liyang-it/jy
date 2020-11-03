@@ -12,8 +12,7 @@
     <artifactId>jy</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>jy</name>
-    <!--打包为war 如果要以tomcat内置启动则删除 打包成jar包，如果要打包成war包，修改成war-->
-    <packaging>war</packaging>
+    <description>jy project for Spring Boot</description>
 
     <properties>
         <java.version>1.8</java.version>
@@ -42,8 +41,6 @@
             <artifactId>druid</artifactId>
             <version>1.1.6</version>
         </dependency>
-
-
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-redis</artifactId>
@@ -56,33 +53,12 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
-        <!--部署成war包时开启↓↓↓↓-->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-tomcat</artifactId>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.tomcat.embed</groupId>
-            <artifactId>tomcat-embed-jasper</artifactId>
-            <scope>provided</scope>
-        </dependency>
-        <!--部署成war包时开启↑↑↑↑-->
-
         <!--添加热部署-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-devtools</artifactId>
             <optional>true</optional>
             <scope>true</scope>
-        </dependency>
-
-        <!--sql server database-->
-        <dependency>
-            <groupId>com.microsoft.sqlserver</groupId>
-            <artifactId>mssql-jdbc</artifactId><!--sqlserver依赖  驱动jar-->
-            <scope>runtime</scope>
-            <version>6.4.0.jre8</version>
         </dependency>
 
         <dependency>
@@ -110,7 +86,6 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-thymeleaf</artifactId>
         </dependency>
-
         <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>fastjson</artifactId>
@@ -126,16 +101,7 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-aop</artifactId>
         </dependency>
-        <!--用于 war形式部署tomcat必要的依赖-->
-
-
-        <dependency>
-            <groupId>javax.servlet</groupId>
-            <artifactId>javax.servlet-api</artifactId>
-            <version>3.1.0</version>
-            <scope>provided</scope>
-        </dependency>
-
+        <!--校验-->
 
     </dependencies>
 
@@ -173,9 +139,9 @@
                     <fork>true</fork>
                     <!--笔记本java位置
 
-                        F:\JAVA\bin\javac
-                        公司电脑java位置  D:/jdk8/bin/javac
-                        -->
+                                    F:\JAVA\bin\javac
+                                    公司电脑java位置  D:/jdk8/bin/javac
+                                    -->
                     <executable>D:/jdk8/bin/javac</executable>
                 </configuration>
             </plugin>
@@ -198,8 +164,6 @@
                 </includes>
             </resource>
         </resources>
-        <!--打包成war 部署外部tomcat  需要项目名 <finalName>jy</finalName>-->
-        <finalName>jy</finalName>
     </build>
 
 
