@@ -9,10 +9,8 @@
     <list default="true" id="6f42de62-40c1-4145-bbcd-9fa426d8d50f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/Stalled/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/Stalled/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/jy/coPyresourceHtml.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/jy/coPyresourceHtml.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/jy-0.0.1-SNAPSHOT.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/jy-0.0.1-SNAPSHOT.jar.original" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -334,7 +332,8 @@
       <workItem from="1598345188786" duration="738000" />
       <workItem from="1598663084903" duration="7564000" />
       <workItem from="1599636468935" duration="1391000" />
-      <workItem from="1604394075838" duration="2424000" />
+      <workItem from="1604394075838" duration="2566000" />
+      <workItem from="1604396840721" duration="969000" />
     </task>
     <task id="LOCAL-00001" summary="idae配置&#10;柚子文档">
       <created>1572255309676</created>
@@ -602,7 +601,14 @@
       <option name="project" value="LOCAL" />
       <updated>1598323495583</updated>
     </task>
-    <option name="localTasksCounter" value="39" />
+    <task id="LOCAL-00039" summary="提交">
+      <created>1604396611923</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1604396611923</updated>
+    </task>
+    <option name="localTasksCounter" value="40" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -622,7 +628,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="资源链接entity" />
     <MESSAGE value="资源链接mapper接口" />
     <MESSAGE value="资源链接Service接口" />
     <MESSAGE value="资源链接Service接口实现类" />
@@ -647,7 +652,8 @@
     <MESSAGE value="添加：Redis缓存" />
     <MESSAGE value="使用war形式" />
     <MESSAGE value="优化小细节，不在使用jar部署，使用war部署" />
-    <option name="LAST_COMMIT_MESSAGE" value="优化小细节，不在使用jar部署，使用war部署" />
+    <MESSAGE value="提交" />
+    <option name="LAST_COMMIT_MESSAGE" value="提交" />
   </component>
   <component name="WindowStateProjectService">
     <state x="345" y="83" key="#Tomcat_Server" timestamp="1597391457904">
@@ -662,30 +668,30 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="394" y="97" key="#com.intellij.j2ee.appServerIntegrations.ApplicationServersConfigurable/0.0.1920.1040@0.0.1920.1040" timestamp="1598260309799" />
-    <state x="560" y="96" key="CommitChangelistDialog2" timestamp="1604396599636">
+    <state x="560" y="96" key="CommitChangelistDialog2" timestamp="1604452893802">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="560" y="96" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1604396599636" />
+    <state x="560" y="96" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1604452893802" />
     <state x="583" y="190" key="FileChooserDialogImpl" timestamp="1598324139024">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="583" y="190" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1598324139024" />
-    <state width="1868" height="185" key="GridCell.Tab.0.bottom" timestamp="1604396172316">
+    <state width="1868" height="185" key="GridCell.Tab.0.bottom" timestamp="1604452843242">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1868" height="185" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1604396172316" />
-    <state width="1868" height="185" key="GridCell.Tab.0.center" timestamp="1604396172316">
+    <state width="1868" height="185" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1604452843242" />
+    <state width="1868" height="185" key="GridCell.Tab.0.center" timestamp="1604452843242">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1868" height="185" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1604396172316" />
-    <state width="1868" height="185" key="GridCell.Tab.0.left" timestamp="1604396172316">
+    <state width="1868" height="185" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1604452843242" />
+    <state width="1868" height="185" key="GridCell.Tab.0.left" timestamp="1604452843242">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1868" height="185" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1604396172316" />
-    <state width="1868" height="185" key="GridCell.Tab.0.right" timestamp="1604396172316">
+    <state width="1868" height="185" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1604452843242" />
+    <state width="1868" height="185" key="GridCell.Tab.0.right" timestamp="1604452843242">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1868" height="185" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1604396172316" />
+    <state width="1868" height="185" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1604452843242" />
     <state width="1868" height="185" key="GridCell.Tab.1.bottom" timestamp="1604396146659">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -718,10 +724,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1589" height="307" key="GridCell.Tab.2.right/0.0.1920.1040@0.0.1920.1040" timestamp="1598324302339" />
-    <state x="552" y="252" key="Vcs.Push.Dialog.v2" timestamp="1598323505221">
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2" timestamp="1604396623249">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1598323505221" />
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1604396623249" />
     <state x="636" y="256" width="787" height="640" key="find.popup" timestamp="1598260870154">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
